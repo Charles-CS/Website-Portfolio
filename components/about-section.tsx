@@ -23,7 +23,7 @@ export function AboutSection() {
           {/* Left: image card */}
           <div className="relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md">
             <img
-              src="/img/profile/New-pfp.png"
+              src="/img/profile/AI profile.png"
               alt="Charles Platon"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
             />
