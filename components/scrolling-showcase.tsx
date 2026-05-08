@@ -11,25 +11,25 @@ type ShowcaseItem = {
 const COLUMN_A: ShowcaseItem[] = [
   { title: "Orpheus", tag: "Where music has no limit", position: "bottom" },
   { title: "Nexus Studio", tag: "Creative Hub", position: "bottom" },
-  { title: "WebJam", tag: "Hackathon", position: "top" },
+  { title: "Competition Winner", tag: "UI/UX Battle", position: "top" },
 ]
 
 const COLUMN_B: ShowcaseItem[] = [
   { title: "CYLCentral", tag: "Events", position: "top" },
   { title: "TixSigurado", tag: "Tickets", position: "bottom" },
-  { title: "Tech Treasure", tag: "Marketplace", position: "top" },
+  { title: "Design Sprint", tag: "Innovation Hub", position: "top" },
 ]
 
 const IMAGES_A = [
   "/img/fullstack/orpheus-1.jpg",
   "/img/creative/devcon.jpg",
-  "/img/creative/webjam.jpg",
+  "/img/competition/competionImage1.jpg",
 ]
 
 const IMAGES_B = [
   "/img/fullstack/cyl-1.jpg",
   "/img/fullstack/tix-1.jpg",
-  "/img/creative/asean.jpg",
+  "/img/competition/competionImage2.jpg",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
