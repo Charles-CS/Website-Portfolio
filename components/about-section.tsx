@@ -1,4 +1,7 @@
+"use client"
+
 import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe, Smartphone, Gamepad2, Terminal } from "lucide-react"
+import { useState, useEffect } from "react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 const FRONTEND_TECHS = [
@@ -31,6 +34,12 @@ const TECH_STACKS = [
 ]
 
 export function AboutSection() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <section id="about" className="relative px-6 py-24">
       <div className="mx-auto max-w-6xl">
@@ -103,7 +112,7 @@ export function AboutSection() {
                     </div>
                   )
 
-                  if (isFullStack) {
+                  if (isFullStack && mounted) {
                     return (
                       <Popover key={label}>
                         <PopoverTrigger asChild>
