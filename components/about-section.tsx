@@ -1,4 +1,27 @@
 import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe, Smartphone, Gamepad2, Terminal } from "lucide-react"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+
+const FRONTEND_TECHS = [
+  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "JS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "TS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "Tailwind", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Framer", icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg" },
+]
+
+const BACKEND_TECHS = [
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { name: "Supabase", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg" },
+  { name: "Prisma", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/prisma/prisma-original.svg" },
+]
 
 const TECH_STACKS = [
   { label: "Full-Stack Web", Icon: Code2 },
@@ -63,17 +86,83 @@ export function AboutSection() {
               </h3>
 
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {TECH_STACKS.map(({ label, Icon }) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-3 rounded-xl bg-card px-4 py-3 ring-1 ring-border transition-shadow hover:shadow-sm"
-                  >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <Icon className="h-4 w-4" aria-hidden />
-                    </span>
-                    <span className="text-sm font-medium">{label}</span>
-                  </div>
-                ))}
+                {TECH_STACKS.map(({ label, Icon }) => {
+                  const isFullStack = label === "Full-Stack Web"
+
+                  const card = (
+                    <div
+                      key={label}
+                      className={isFullStack ? "w-full cursor-pointer" : "w-full"}
+                    >
+                      <div className="flex items-center gap-3 rounded-xl bg-card px-4 py-3 ring-1 ring-border transition-all hover:shadow-sm hover:ring-primary/40 group">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                          <Icon className="h-4 w-4" aria-hidden />
+                        </span>
+                        <span className="text-sm font-medium">{label}</span>
+                      </div>
+                    </div>
+                  )
+
+                  if (isFullStack) {
+                    return (
+                      <Popover key={label}>
+                        <PopoverTrigger asChild>
+                          {card}
+                        </PopoverTrigger>
+                        <PopoverContent
+                          side="top"
+                          className="w-[95vw] max-w-[500px] border-black/10 bg-white p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] backdrop-blur-md"
+                          align="center"
+                          sideOffset={15}
+                        >
+                          <div className="space-y-6">
+                            {/* Frontend Section */}
+                            <div className="space-y-3 text-center">
+                              <p className="font-mono text-[10px] font-bold tracking-[0.2em] text-black/40 uppercase">
+                                Frontend & Core Scripting
+                              </p>
+                              <div className="flex items-center justify-between gap-1.5 sm:gap-2">
+                                {FRONTEND_TECHS.map((tech) => (
+                                  <div
+                                    key={tech.name}
+                                    className="group relative flex h-9 w-9 shrink items-center justify-center rounded-lg bg-black/[0.03] ring-1 ring-black/10 transition-all hover:bg-black/5 hover:ring-black/20 sm:h-10 sm:w-10"
+                                  >
+                                    <img src={tech.icon} alt={tech.name} className="h-5 w-5 object-contain sm:h-6 sm:w-6" />
+                                    <span className="absolute -top-9 left-1/2 -translate-x-1/2 scale-0 rounded bg-black px-2 py-1 text-[10px] font-bold text-white transition-transform group-hover:scale-100">
+                                      {tech.name}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Backend Section */}
+                            <div className="space-y-3 text-center">
+                              <p className="font-mono text-[10px] font-bold tracking-[0.2em] text-black/40 uppercase">
+                                Backend & Data Architecture
+                              </p>
+                              <div className="flex items-center justify-between gap-1.5 sm:gap-2">
+                                {BACKEND_TECHS.map((tech) => (
+                                  <div
+                                    key={tech.name}
+                                    className="group relative flex h-9 w-9 shrink items-center justify-center rounded-lg bg-black/[0.03] ring-1 ring-black/10 transition-all hover:bg-black/5 hover:ring-black/20 sm:h-10 sm:w-10"
+                                  >
+                                    <img src={tech.icon} alt={tech.name} className="h-5 w-5 object-contain sm:h-6 sm:w-6" />
+                                    <span className="absolute -top-9 left-1/2 -translate-x-1/2 scale-0 rounded bg-black px-2 py-1 text-[10px] font-bold text-white transition-transform group-hover:scale-100">
+                                      {tech.name}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </PopoverContent>
+                      </Popover>
+                    )
+                  }
+
+                  return card
+                })}
               </div>
             </div>
 
