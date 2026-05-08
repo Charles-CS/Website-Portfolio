@@ -9,7 +9,7 @@ type ShowcaseItem = {
 }
 
 const COLUMN_A: ShowcaseItem[] = [
-  { title: "Toka Project", tag: "Creative Work", position: "top" },
+  { title: "Creative Work", tag: "Design & Logic", position: "top" },
   { title: "Digital Craft", tag: "Pixel Perfect", position: "bottom" },
   { title: "Visual Story", tag: "Interface Design", position: "top" },
 ]
@@ -21,13 +21,13 @@ const COLUMN_B: ShowcaseItem[] = [
 ]
 
 const IMAGES_A = [
-  "/img/imageGallery/galleryImage (4).png",
+  "/img/imageGallery/galleryImage (1).png",
   "/img/imageGallery/galleryImage (2).png",
   "/img/imageGallery/galleryImage (3).png",
 ]
 
 const IMAGES_B = [
-  "/img/imageGallery/galleryImage (1).png",
+  "/img/imageGallery/galleryImage (4).png",
   "/img/imageGallery/galleryImage (5).png",
   "/img/imageGallery/galleryImage (6).png",
 ]
@@ -41,7 +41,7 @@ function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      
+
       <span
         className={cn(
           "absolute font-mono text-[10px] uppercase tracking-wider",
@@ -51,7 +51,7 @@ function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
       >
         Preview
       </span>
-      
+
       <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="font-display text-sm font-bold text-white">{item.title}</p>
         <p className="text-[10px] text-white/70">{item.tag}</p>
@@ -61,22 +61,19 @@ function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
 }
 
 function Column({ items, images, direction }: { items: ShowcaseItem[]; images: string[]; direction: "up" | "down" }) {
-  // Use a simple 2x duplicate for a perfect 50% loop
-  const loopItems = [...items, ...items]
-  const loopImages = [...images, ...images]
-  
+  const loopItems = [...items, ...items, ...items]
+  const loopImages = [...images, ...images, ...images]
+
   return (
     <div className="relative h-[480px] overflow-hidden">
       <div
         className={cn(
-          "flex flex-col",
+          "flex flex-col gap-5",
           direction === "up" ? "animate-scroll-up" : "animate-scroll-down",
         )}
       >
         {loopItems.map((item, i) => (
-          <div key={`${item.title}-${i}`} className="mb-5">
-            <ProjectCard item={item} src={loopImages[i]} />
-          </div>
+          <ProjectCard key={`${item.title}-${i}`} item={item} src={loopImages[i]} />
         ))}
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-background to-transparent" />

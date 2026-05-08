@@ -1,10 +1,10 @@
-import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe } from "lucide-react"
+import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe, Smartphone, Database } from "lucide-react"
 
-const DRIVERS = [
-  { label: "Creative Design", Icon: Palette },
-  { label: "Clean Code", Icon: Code2 },
-  { label: "Team Collaboration", Icon: Users },
-  { label: "Open Source", Icon: Globe },
+const TECH_STACKS = [
+  { label: "Full-Stack Web", Icon: Code2 },
+  { label: "Mobile Dev", Icon: Smartphone },
+  { label: "3D Art & Modeling", Icon: Palette },
+  { label: "Database Management", Icon: Database },
 ]
 
 export function AboutSection() {
@@ -58,12 +58,12 @@ export function AboutSection() {
 
             <div>
               <h3 className="flex items-center gap-2 text-lg font-semibold">
-                <Heart className="h-4 w-4 text-primary" aria-hidden />
-                What Drives Me
+                <Code2 className="h-4 w-4 text-primary" aria-hidden />
+                Technology Stacks
               </h3>
 
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {DRIVERS.map(({ label, Icon }) => (
+                {TECH_STACKS.map(({ label, Icon }) => (
                   <div
                     key={label}
                     className="flex items-center gap-3 rounded-xl bg-card px-4 py-3 ring-1 ring-border transition-shadow hover:shadow-sm"
