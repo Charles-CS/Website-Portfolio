@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-background`}>
-      <body className="font-sans antialiased">
+    <html lang="en" suppressHydrationWarning className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-background`}>
+      <body suppressHydrationWarning className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
