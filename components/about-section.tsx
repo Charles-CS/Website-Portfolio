@@ -1,10 +1,10 @@
-import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe, Smartphone, Database } from "lucide-react"
+import { Code2, Heart, Palette, Quote, Sparkles, Users, Zap, Globe, Smartphone, Gamepad2, Terminal } from "lucide-react"
 
 const TECH_STACKS = [
   { label: "Full-Stack Web", Icon: Code2 },
   { label: "Mobile Dev", Icon: Smartphone },
-  { label: "3D Art & Modeling", Icon: Palette },
-  { label: "Database Management", Icon: Database },
+  { label: "Game Development", Icon: Gamepad2 },
+  { label: "Tools & Deployment", Icon: Terminal },
 ]
 
 export function AboutSection() {
