@@ -61,19 +61,22 @@ function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
 }
 
 function Column({ items, images, direction }: { items: ShowcaseItem[]; images: string[]; direction: "up" | "down" }) {
-  const loopItems = [...items, ...items, ...items]
-  const loopImages = [...images, ...images, ...images]
+  // Use a simple 2x duplicate for a perfect 50% loop
+  const loopItems = [...items, ...items]
+  const loopImages = [...images, ...images]
   
   return (
     <div className="relative h-[480px] overflow-hidden">
       <div
         className={cn(
-          "flex flex-col gap-5",
+          "flex flex-col",
           direction === "up" ? "animate-scroll-up" : "animate-scroll-down",
         )}
       >
         {loopItems.map((item, i) => (
-          <ProjectCard key={`${item.title}-${i}`} item={item} src={loopImages[i]} />
+          <div key={`${item.title}-${i}`} className="mb-5">
+            <ProjectCard item={item} src={loopImages[i]} />
+          </div>
         ))}
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-background to-transparent" />
