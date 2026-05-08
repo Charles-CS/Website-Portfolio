@@ -9,7 +9,7 @@ type ShowcaseItem = {
 }
 
 const COLUMN_A: ShowcaseItem[] = [
-  { title: "Creative Work", tag: "Design & Logic", position: "top" },
+  { title: "Toka Project", tag: "Creative Work", position: "top" },
   { title: "Digital Craft", tag: "Pixel Perfect", position: "bottom" },
   { title: "Visual Story", tag: "Interface Design", position: "top" },
 ]
@@ -21,13 +21,13 @@ const COLUMN_B: ShowcaseItem[] = [
 ]
 
 const IMAGES_A = [
-  "/img/imageGallery/galleryImage (1).png",
+  "/img/imageGallery/galleryImage (4).png",
   "/img/imageGallery/galleryImage (2).png",
   "/img/imageGallery/galleryImage (3).png",
 ]
 
 const IMAGES_B = [
-  "/img/imageGallery/galleryImage (4).png",
+  "/img/imageGallery/galleryImage (1).png",
   "/img/imageGallery/galleryImage (5).png",
   "/img/imageGallery/galleryImage (6).png",
 ]
