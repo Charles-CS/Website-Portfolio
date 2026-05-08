@@ -12,24 +12,28 @@ const COLUMN_A: ShowcaseItem[] = [
   { title: "Orpheus", tag: "Where music has no limit", position: "bottom" },
   { title: "Nexus Studio", tag: "Creative Hub", position: "bottom" },
   { title: "Competition Winner", tag: "UI/UX Battle", position: "top" },
+  { title: "Devkada Community", tag: "Tech Network", position: "bottom" },
 ]
 
 const COLUMN_B: ShowcaseItem[] = [
   { title: "CYLCentral", tag: "Events", position: "top" },
   { title: "TixSigurado", tag: "Tickets", position: "bottom" },
   { title: "Design Sprint", tag: "Innovation Hub", position: "top" },
+  { title: "Community Meetup", tag: "Collaboration", position: "bottom" },
 ]
 
 const IMAGES_A = [
   "/img/fullstack/orpheus-1.jpg",
   "/img/creative/devcon.jpg",
   "/img/competition/competionImage1.jpg",
+  "/img/devkada/1777990915724.jpg",
 ]
 
 const IMAGES_B = [
   "/img/fullstack/cyl-1.jpg",
   "/img/fullstack/tix-1.jpg",
   "/img/competition/competionImage2.jpg",
+  "/img/devkada/687852729_122171611202888015_2246193837610754200_n.jpg",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
