@@ -9,23 +9,27 @@ type ShowcaseItem = {
 }
 
 const COLUMN_A: ShowcaseItem[] = [
-  { title: "Competition Winner", tag: "UI/UX Battle", position: "top" },
-  { title: "Devkada Community", tag: "Tech Network", position: "bottom" },
+  { title: "Creative Work", tag: "Design & Logic", position: "top" },
+  { title: "Digital Craft", tag: "Pixel Perfect", position: "bottom" },
+  { title: "Visual Story", tag: "Interface Design", position: "top" },
 ]
 
 const COLUMN_B: ShowcaseItem[] = [
-  { title: "Design Sprint", tag: "Innovation Hub", position: "top" },
-  { title: "Community Meetup", tag: "Collaboration", position: "bottom" },
+  { title: "Studio Projects", tag: "Built with Passion", position: "top" },
+  { title: "Tech Innovation", tag: "Modern Stack", position: "bottom" },
+  { title: "Future Vision", tag: "Next Gen Web", position: "top" },
 ]
 
 const IMAGES_A = [
-  "/img/competition/competionImage1.jpg",
-  "/img/devkada/1777990915724.jpg",
+  "/img/imageGallery/galleryImage (1).png",
+  "/img/imageGallery/galleryImage (2).png",
+  "/img/imageGallery/galleryImage (3).png",
 ]
 
 const IMAGES_B = [
-  "/img/competition/competionImage2.jpg",
-  "/img/devkada/687852729_122171611202888015_2246193837610754200_n.jpg",
+  "/img/imageGallery/galleryImage (4).png",
+  "/img/imageGallery/galleryImage (5).png",
+  "/img/imageGallery/galleryImage (6).png",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
