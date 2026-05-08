@@ -22,12 +22,14 @@ export function AboutSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: image card */}
           <div className="relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <p className="text-2xl font-semibold text-white/90 drop-shadow-sm">Replace me</p>
-              <p className="mt-1 text-sm text-white/75">Drop your image into /public/img/...</p>
-            </div>
+            <img
+              src="/img/profile/fb-pfp.jpg"
+              alt="Charles Platon"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-            <span className="relative inline-flex w-fit items-center gap-2 rounded-full bg-white/85 px-3 py-1.5 text-xs font-medium text-foreground/80 ring-1 ring-white/60 backdrop-blur">
+            <span className="relative inline-flex w-fit items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-black shadow-lg backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden />
               Available for opportunities
             </span>
