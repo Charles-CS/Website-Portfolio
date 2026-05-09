@@ -18,43 +18,43 @@ type Card = {
 const CARDS: Card[] = [
   {
     count: 3,
-    category: "BRANDING",
+    category: "PORTFOLIO",
     icon: Palette,
-    title: "TICaP 20 Official Branding",
+    title: "Projects",
     description:
-      "As Head of Creatives, led the visual direction and designed the official 20th-anniversary logo for this major technology exhibit.",
-    type: "BRANDING",
-    words: ["bold", "iconic", "milestone", "vision"],
+      "A collection of my recent development work, ranging from full-stack applications to experimental interactive web experiences.",
+    type: "PROJECTS",
+    words: ["code", "design", "build", "ship"],
   },
   {
     count: 3,
-    category: "CREATIVE DIRECTION",
+    category: "EXPERIENCE",
     icon: Globe,
-    title: "DEVCON Manila",
+    title: "Hackathons",
     description:
-      "Serving as VP for Creatives, leading digital direction and ensuring visual consistency across all community platforms.",
-    type: "CREATIVE DIRECTION",
-    words: ["the app will live", "movable to be", "remembered", "by everyone"],
-  },
-  {
-    count: 3,
-    category: "WEB DESIGN",
-    icon: Globe,
-    title: "ASEAN Business Advisory Council (PH)",
-    description:
-      "Focused on usability and clean visual structure to translate stakeholder requirements into responsive website layouts.",
-    type: "WEB DESIGN",
-    words: ["clarity", "structure", "trust", "purpose"],
+      "Intense 48-hour sprints of innovation and collaboration, building functional prototypes to solve real-world challenges.",
+    type: "COMPETITIONS",
+    words: ["sprint", "innovate", "teamwork", "build"],
   },
   {
     count: 3,
     category: "AWARD",
     icon: Award,
-    title: "WebJam UI/UX Champion",
+    title: "Computer Science QuizBee Champion",
     description:
-      "Award-winning design recognized for exceptional user interface and experience design in a competitive hackathon setting.",
+      "Consistently recognized for technical knowledge and problem-solving speed in regional computer science competitions.",
     type: "AWARD",
-    words: ["champion", "design", "experience", "excellence"],
+    words: ["champion", "speed", "logic", "victory"],
+  },
+  {
+    count: 3,
+    category: "RECOGNITION",
+    icon: Award,
+    title: "Certificates",
+    description:
+      "A testament to continuous learning and mastery of various technologies, from cloud platforms to specialized development frameworks.",
+    type: "CERTIFICATION",
+    words: ["learn", "master", "grow", "verify"],
   },
 ]
 
@@ -100,7 +100,7 @@ export function CreativeDirectionSection() {
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-primary" aria-hidden />
-          <p className="font-mono text-xs tracking-widest text-primary">03 / CREATIVE DIRECTION</p>
+          <p className="font-mono text-xs tracking-widest text-primary">03 / PROJECTS & ACHIEVEMENTS</p>
         </div>
         <h2 className="mt-3 font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
           <span className="text-foreground">Design &</span>
