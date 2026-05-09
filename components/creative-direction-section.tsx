@@ -171,59 +171,68 @@ export function CreativeDirectionSection() {
       >
         <DialogContent
           showCloseButton={false}
-          className="max-h-[90vh] w-[95vw] max-w-6xl overflow-hidden p-0 sm:rounded-2xl"
+          className="max-h-[90vh] w-[95vw] sm:max-w-5xl md:max-w-[1000px] overflow-hidden p-0 rounded-[24px] sm:rounded-[24px] border-none shadow-2xl"
         >
           {active && (
-            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
+            <div className="grid h-full max-h-[90vh] grid-cols-1 md:grid-cols-[380px_1fr]">
               {/* Left: details */}
-              <div className="flex flex-col justify-between bg-card p-8">
+              <div className="flex h-full flex-col justify-between bg-white dark:bg-zinc-950 p-8 md:p-10 border-r border-border/50 overflow-y-auto">
                 <div>
-                  <span className="inline-block rounded-md bg-primary/10 px-2 py-1 font-mono text-[10px] tracking-widest text-primary">
+                  <span className="inline-block rounded-full bg-violet-500/10 px-3 py-1.5 font-mono text-[10px] font-semibold tracking-widest text-violet-600 uppercase">
                     {active.category}
                   </span>
-                  <DialogTitle className="mt-4 text-2xl font-bold leading-tight text-foreground">
+                  <DialogTitle className="mt-5 text-[26px] font-bold leading-tight text-foreground tracking-tight">
                     {active.title}
                   </DialogTitle>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/75">{active.description}</p>
+                  <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">{active.description}</p>
                 </div>
 
-                <div className="mt-10 border-t border-border pt-5">
-                  <p className="font-mono text-[11px] tracking-widest text-muted-foreground">PROJECT DETAILS</p>
-                  <dl className="mt-4 space-y-3 text-sm">
+                <div className="mt-12 border-t border-border/50 pt-6">
+                  <p className="font-mono text-[11px] font-semibold tracking-widest text-muted-foreground uppercase mb-5">
+                    PROJECT DETAILS
+                  </p>
+                  <dl className="space-y-4 text-sm">
                     <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">TYPE</dt>
-                      <dd className="font-medium text-foreground">{active.type}</dd>
+                      <dt className="text-[11px] font-mono tracking-wider text-muted-foreground uppercase">TYPE</dt>
+                      <dd className="font-medium text-foreground text-[13px]">{active.type}</dd>
                     </div>
                     <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">MEDIA</dt>
-                      <dd className="font-medium text-foreground">{active.count} images</dd>
+                      <dt className="text-[11px] font-mono tracking-wider text-muted-foreground uppercase">MEDIA</dt>
+                      <dd className="font-medium text-foreground text-[13px]">{active.count} images</dd>
                     </div>
                   </dl>
                 </div>
               </div>
 
               {/* Right: gallery */}
-              <div className="relative max-h-[90vh] overflow-y-auto bg-muted/40">
+              <div className="relative h-full max-h-[90vh] overflow-y-auto bg-white dark:bg-zinc-950 p-4 sm:p-6 min-w-0
+                [&::-webkit-scrollbar]:w-1.5
+                [&::-webkit-scrollbar-track]:bg-transparent
+                [&::-webkit-scrollbar-thumb]:bg-zinc-200
+                [&::-webkit-scrollbar-thumb]:rounded-full
+                dark:[&::-webkit-scrollbar-thumb]:bg-zinc-800">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(null)}
-                  className="absolute right-4 top-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white shadow-md transition hover:bg-black"
+                  className="fixed sm:absolute right-6 top-6 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition-colors hover:bg-black/60 shadow-sm"
                   aria-label="Close gallery"
                 >
                   <X className="h-4 w-4" />
                 </button>
 
-                {Array.from({ length: active.count }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden border-b border-border bg-background"
-                  >
-                    <KineticPreview />
-                    <span className="absolute right-4 bottom-4 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/70 font-mono text-[11px] text-white">
-                      {i + 1}/{active.count}
-                    </span>
-                  </div>
-                ))}
+                <div className="flex flex-col gap-4 w-full">
+                  {Array.from({ length: active.count }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted/20 shadow-sm"
+                    >
+                      <KineticPreview />
+                      <span className="absolute right-6 bottom-6 z-10 inline-flex items-center justify-center rounded-full bg-black/80 px-3 py-1 font-mono text-[10px] font-medium tracking-widest text-white backdrop-blur-md shadow-sm">
+                        {i + 1} / {active.count}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
