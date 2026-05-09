@@ -56,7 +56,7 @@ export function SiteHeader() {
 
         <a
           href="#contact"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-violet-700 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-violet-500/25 transition-transform hover:scale-[1.02]"
+          className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
         >
           <Linkedin className="h-4 w-4" aria-hidden />
           Connect with me

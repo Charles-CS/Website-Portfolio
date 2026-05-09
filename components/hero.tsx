@@ -19,11 +19,10 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="home" className="relative isolate overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-glow" aria-hidden />
+    <section id="home" className="relative isolate overflow-hidden min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 -z-10 bg-grid" aria-hidden />
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-6 pt-32 pb-12 text-center sm:pt-36">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 pt-20 pb-16 text-center">
         <p className="font-mono text-base text-primary sm:text-lg">
           <span className="text-primary/70">&gt;</span> {typed}
           <span className="ml-0.5 inline-block w-2 -translate-y-0.5 align-middle text-primary animate-caret">|</span>
@@ -31,7 +30,7 @@ export function Hero() {
 
         <h1 className="mt-6 text-balance font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
           <span className="text-foreground">Charles </span>
-          <span className="bg-gradient-to-br from-violet-500 to-violet-700 bg-clip-text text-transparent">Platon</span>
+          <span className="text-primary">Platon</span>
         </h1>
 
         {/* hand-drawn squiggle */}
@@ -60,7 +59,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col items-center gap-5">
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-violet-700 px-6 py-3 font-medium text-white shadow-lg shadow-violet-500/30 transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-white shadow-lg shadow-primary/30 transition-transform hover:scale-[1.02]"
           >
             <Download className="h-4 w-4" aria-hidden />
             Download CV

@@ -34,7 +34,7 @@ const IMAGES_B = [
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
   return (
-    <div className="group relative h-64 w-full overflow-hidden rounded-2xl border border-white/20 bg-card shadow-md transition-all hover:scale-[1.02]">
+    <div className="group relative h-80 w-full overflow-hidden rounded-2xl border border-white/20 bg-card shadow-md transition-all hover:scale-[1.02]">
       <img
         src={src || "/placeholder.svg"}
         alt={item.title}
@@ -65,10 +65,10 @@ function Column({ items, images, direction }: { items: ShowcaseItem[]; images: s
   const loopImages = [...images, ...images, ...images]
 
   return (
-    <div className="relative h-[480px] overflow-hidden">
+    <div className="relative h-[500px] overflow-hidden">
       <div
         className={cn(
-          "flex flex-col gap-5",
+          "flex flex-col gap-8",
           direction === "up" ? "animate-scroll-up" : "animate-scroll-down",
         )}
       >
@@ -84,8 +84,9 @@ function Column({ items, images, direction }: { items: ShowcaseItem[]; images: s
 
 export function ScrollingShowcase() {
   return (
-    <section className="relative">
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 pb-12 md:grid-cols-2">
+    <section className="relative isolate overflow-hidden py-20">
+      <div className="absolute inset-0 -z-10 bg-grid" aria-hidden />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 pb-16 md:grid-cols-2">
         <Column items={COLUMN_A} images={IMAGES_A} direction="up" />
         <Column items={COLUMN_B} images={IMAGES_B} direction="down" />
       </div>
