@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Linkedin, Github } from "lucide-react"
+import { Download, Github } from "lucide-react"
 
 const PHRASE = "Hello, world! Call me"
 
