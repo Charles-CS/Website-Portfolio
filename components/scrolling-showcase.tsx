@@ -84,7 +84,7 @@ function Column({ items, images, direction }: { items: ShowcaseItem[]; images: s
 
 export function ScrollingShowcase() {
   return (
-    <section className="relative isolate overflow-hidden py-20">
+    <section className="relative isolate overflow-hidden pt-4 pb-20">
       <div className="absolute inset-0 -z-10 bg-grid" aria-hidden />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 pb-16 md:grid-cols-2">
         <Column items={COLUMN_A} images={IMAGES_A} direction="up" />

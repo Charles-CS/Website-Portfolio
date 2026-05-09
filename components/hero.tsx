@@ -19,10 +19,10 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="home" className="relative isolate overflow-hidden min-h-screen flex items-center justify-center">
+    <section id="home" className="relative isolate overflow-hidden h-[85vh] flex items-center justify-center">
       <div className="absolute inset-0 -z-10 bg-grid" aria-hidden />
 
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 pt-20 pb-16 text-center">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 pt-20 pb-0 text-center">
         <p className="font-mono text-base text-primary sm:text-lg">
           <span className="text-primary/70">&gt;</span> {typed}
           <span className="ml-0.5 inline-block w-2 -translate-y-0.5 align-middle text-primary animate-caret">|</span>
