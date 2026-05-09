@@ -24,7 +24,7 @@ const GAMES: GameCard[] = [
 export function GamesSection() {
   return (
     <section id="awards" className="relative px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <p className="font-mono text-xs tracking-widest text-primary">03 / CREATIVE DIRECTION</p>
         <h2 className="mt-3 font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
           <span className="text-foreground">Games &amp; </span>

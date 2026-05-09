@@ -66,7 +66,7 @@ export function FullStackSection() {
 
   return (
     <section id="projects" className="relative px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <p className="font-mono text-xs tracking-widest text-primary">02 / TECHNICAL EXECUTION</p>
         <h2 className="mt-3 font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
           <span className="block text-foreground">Full-Stack</span>
@@ -128,21 +128,22 @@ export function FullStackSection() {
           <div className="relative">
             <div
               key={project.id}
-              className="group relative h-[500px] overflow-hidden rounded-2xl border border-border bg-card shadow-md"
+              className="relative h-[550px] overflow-hidden rounded-2xl"
             >
-              <div className="flex flex-col gap-4 px-1 py-1 animate-scroll-up [animation-play-state:running] group-hover:[animation-play-state:paused]">
+              <div className="flex flex-col gap-6 animate-scroll-up [animation-play-state:running] hover:[animation-play-state:paused]">
                 {loopImages.map((src, i) => (
                   <div
                     key={`${src}-${i}`}
-                    className="relative w-full overflow-hidden rounded-xl border border-border bg-white shadow-sm"
+                    className="group relative w-full overflow-hidden rounded-xl border border-black/5 bg-white shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] transition-all hover:scale-[1.01] hover:shadow-xl"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={src || "/placeholder.svg"}
                       alt={`${project.title} preview ${(i % project.images.length) + 1}`}
-                      className="w-full h-auto transition duration-500 group-hover:scale-[1.02]"
+                      className="w-full aspect-[16/8] object-contain transition-transform duration-700"
                     />
-                    <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-black shadow-lg backdrop-blur-sm uppercase">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    
+                    <span className="absolute left-3 bottom-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[8px] font-normal uppercase tracking-wider text-black/80 shadow-lg backdrop-blur-sm">
                       Preview
                     </span>
                   </div>
@@ -150,8 +151,8 @@ export function FullStackSection() {
               </div>
 
               {/* Top / bottom fade masks */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-card to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-card to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent z-10" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent z-10" />
             </div>
           </div>
         </div>

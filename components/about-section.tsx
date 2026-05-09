@@ -64,7 +64,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="relative px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <p className="font-mono text-xs tracking-widest text-primary">GET TO KNOW ME</p>
         <h2 className="mt-3 font-display text-6xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
           About <span className="bg-gradient-to-br from-violet-500 to-violet-700 bg-clip-text text-transparent">Me</span>
@@ -244,8 +244,8 @@ export function AboutSection() {
                 Fun Fact
               </p>
               <p className="mt-3 text-lg leading-relaxed text-pretty text-foreground/90">
-                &quot;Balancing 3rd-year CS with 3D modeling is a different grind — but bridging logic and visual craft
-                is what keeps me coding past midnight.&quot;
+                &quot;I once developed an endless-runner game to help with phonics learning. It turns out, making
+                education fun is significantly harder than making a player jump over a spike pit.&quot;
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
