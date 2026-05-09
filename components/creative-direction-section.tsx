@@ -26,10 +26,10 @@ const CARDS: Card[] = [
       "A collection of my recent development work, ranging from full-stack applications to experimental interactive web experiences.",
     type: "PROJECTS",
     images: [
-      "/img/creative/projects/project (5).png",
-      "/img/creative/projects/project (6).png",
-      "/img/creative/projects/project (1).png",
-      "/img/creative/projects/project (4).png",
+      "/img/creative/projects/project-5.png",
+      "/img/creative/projects/project-6.png",
+      "/img/creative/projects/project-1.png",
+      "/img/creative/projects/project-4.png",
     ],
     words: ["code", "design", "build", "ship"],
   },
@@ -41,7 +41,7 @@ const CARDS: Card[] = [
     description:
       "Intense 48-hour sprints of innovation and collaboration, building functional prototypes to solve real-world challenges.",
     type: "COMPETITIONS",
-    images: ["/img/creative/hackathons/hackathonImage (1).png", "/img/creative/hackathons/hackathonImage (2).png"],
+    images: ["/img/creative/hackathons/hackathon-1.png", "/img/creative/hackathons/hackathon-2.png"],
     words: ["sprint", "innovate", "teamwork", "build"],
   },
   {
@@ -52,7 +52,7 @@ const CARDS: Card[] = [
     description:
       "Consistently recognized for technical knowledge and problem-solving speed in regional computer science competitions.",
     type: "AWARD",
-    images: ["/img/creative/competition/competionImage .png", "/img/creative/competition/competionImage .jpg"],
+    images: ["/img/creative/competition/competition-1.png", "/img/creative/competition/competition-2.png"],
     words: ["champion", "speed", "logic", "victory"],
   },
   {
@@ -64,12 +64,12 @@ const CARDS: Card[] = [
       "A testament to continuous learning and mastery of various technologies, from cloud platforms to specialized development frameworks.",
     type: "CERTIFICATION",
     images: [
-      "/img/creative/cert/cert (1).png",
-      "/img/creative/cert/cert (2).png",
-      "/img/creative/cert/cert (3).png",
-      "/img/creative/cert/cert (4).png",
-      "/img/creative/cert/cert (5).png",
-      "/img/creative/cert/cert (6).png",
+      "/img/creative/cert/cert-1.png",
+      "/img/creative/cert/cert-2.png",
+      "/img/creative/cert/cert-3.png",
+      "/img/creative/cert/cert-4.png",
+      "/img/creative/cert/cert-5.png",
+      "/img/creative/cert/cert-6.png",
     ],
     words: ["learn", "master", "grow", "verify"],
   },
