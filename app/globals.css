@@ -151,11 +151,11 @@
 }
 
 .animate-scroll-up {
-  animation: scroll-y-up 28s linear infinite;
+  animation: scroll-y-up 18s linear infinite;
 }
 
 .animate-scroll-down {
-  animation: scroll-y-down 32s linear infinite;
+  animation: scroll-y-down 22s linear infinite;
 }
 
 /* Caret blink for terminal text */

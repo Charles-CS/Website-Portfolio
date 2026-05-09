@@ -21,54 +21,49 @@ const COLUMN_B: ShowcaseItem[] = [
 ]
 
 const IMAGES_A = [
-  "/img/imageGallery/galleryImage (1).png",
-  "/img/imageGallery/galleryImage (2).png",
-  "/img/imageGallery/galleryImage (3).png",
+  "/img/imageGallery/GalleryImage (1).png",
+  "/img/imageGallery/GalleryImage (5).png",
+  "/img/imageGallery/GalleryImage (3).png",
 ]
 
 const IMAGES_B = [
-  "/img/imageGallery/galleryImage (4).png",
-  "/img/imageGallery/galleryImage (5).png",
-  "/img/imageGallery/galleryImage (6).png",
+  "/img/imageGallery/GalleryImage (2).png",
+  "/img/imageGallery/GalleryImage (4).png",
+  "/img/imageGallery/GalleryImage (6).png",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
   return (
-    <div className="group relative h-80 w-full overflow-hidden rounded-2xl border border-white/20 bg-card shadow-md transition-all hover:scale-[1.02]">
+    <div className="group relative w-full overflow-hidden rounded-2xl border border-white/20 bg-card shadow-md transition-all hover:scale-[1.02]">
       <img
         src={src || "/placeholder.svg"}
         alt={item.title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <span
         className={cn(
-          "absolute font-mono text-[10px] uppercase tracking-wider",
-          "rounded-full bg-white/90 px-2.5 py-1 text-black shadow-lg backdrop-blur-sm",
-          item.position === "top" ? "right-3 top-3" : "left-3 bottom-3",
+          "absolute font-mono text-[8px] font-normal uppercase tracking-wider",
+          "rounded-full bg-white/90 px-2.5 py-1 text-black/80 shadow-lg backdrop-blur-sm",
+          "left-3 bottom-3",
         )}
       >
         Preview
       </span>
-
-      <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-        <p className="font-display text-sm font-bold text-white">{item.title}</p>
-        <p className="text-[10px] text-white/70">{item.tag}</p>
-      </div>
     </div>
   )
 }
 
 function Column({ items, images, direction }: { items: ShowcaseItem[]; images: string[]; direction: "up" | "down" }) {
-  const loopItems = [...items, ...items, ...items]
-  const loopImages = [...images, ...images, ...images]
+  const loopItems = [...items, ...items]
+  const loopImages = [...images, ...images]
 
   return (
     <div className="relative h-[500px] overflow-hidden">
       <div
         className={cn(
-          "flex flex-col gap-8",
+          "flex flex-col gap-4",
           direction === "up" ? "animate-scroll-up" : "animate-scroll-down",
         )}
       >
@@ -84,15 +79,15 @@ function Column({ items, images, direction }: { items: ShowcaseItem[]; images: s
 
 export function ScrollingShowcase() {
   return (
-    <section className="relative isolate overflow-hidden pt-4 pb-20">
+    <section className="relative isolate overflow-hidden pt-0 pb-10 -mt-6">
       <div className="absolute inset-0 -z-10 bg-grid" aria-hidden />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 pb-16 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 pb-4 md:grid-cols-2">
         <Column items={COLUMN_A} images={IMAGES_A} direction="up" />
         <Column items={COLUMN_B} images={IMAGES_B} direction="down" />
       </div>
 
-      <p className="pb-20 text-center font-mono text-xs tracking-widest text-muted-foreground">
-        ↻ INFINITE VERTICAL SCROLL · LANDSCAPE SHOWCASE ↺
+      <p className="mt-[8px] pb-[30px] text-center font-mono text-[10px] tracking-widest text-muted-foreground/50">
+        ↻ infinite vertical scroll · landscape showcase ↺
       </p>
     </section>
   )
