@@ -73,9 +73,9 @@ export function AboutSection() {
           Passionate developer & creator who loves building meaningful digital experiences.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
           {/* Left: image card */}
-          <div className="relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md">
+          <div className="relative flex lg:h-[100vh] min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md lg:sticky lg:top-12">
             <img
               src="/img/profile/AI profile.png"
               alt="Charles Platon"
@@ -90,7 +90,7 @@ export function AboutSection() {
           </div>
 
           {/* Right column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 justify-center">
             <div className="relative rounded-2xl bg-card p-7 shadow-sm ring-1 ring-border">
               <span className="absolute -left-1.5 top-12 h-2.5 w-2.5 rounded-full bg-primary" aria-hidden />
               <Quote className="h-6 w-6 text-primary" aria-hidden />
@@ -104,7 +104,7 @@ export function AboutSection() {
                 <p>
                   Currently exploring the intersection of{" "}
                   <span className="font-medium text-primary">full-stack web, game development, and 3D art</span>. When
-                  I&apos;m not shipping code, you&apos;ll find me modeling assets in Blender or competing in CS quizbees
+                  I&apos;m not shipping code, you&apos;ll find me modeling assets in Blender or competing in hackathons
                   with my team.
                 </p>
               </div>
@@ -244,8 +244,8 @@ export function AboutSection() {
                 Fun Fact
               </p>
               <p className="mt-3 text-lg leading-relaxed text-pretty text-foreground/90">
-                &quot;Balancing 3rd-year CS with 3D modeling is a different grind — but bridging logic and visual craft
-                is what keeps me coding past midnight.&quot;
+                &quot;I once developed an endless-runner game to help with phonics learning. It turns out, making
+                education fun is significantly harder than making a player jump over a spike pit.&quot;
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
