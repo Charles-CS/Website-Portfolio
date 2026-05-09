@@ -15,17 +15,18 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: "CYLCentral",
-    title: "CYLCentral",
-    subtitle: "Event Management Portal",
+    id: "Kumpirma",
+    title: "Kumpirma",
+    subtitle: "Digital Signature Verification System",
     description:
-      "CYLCentral is a comprehensive event management platform that leverages AI to help organizers plan and manage events. The system includes real-time analytics, attendee management, and automated scheduling features.",
-    tech: ["Laravel", "Flutter", "MySQL", "AI/RAG"],
+      "Full-stack AI + Blockchain system for signature verification. Integrates YOLOv8, Pix2Pix GAN, and Siamese CapsNet with Ethereum smart contracts and IPFS for tamper-proof document authentication.",
+    tech: ["Next.js", "TypeScript", "Python", "OpenCV & TensorFlow", "PostgreSQL", "IPFS (InterPlanetary File System)"],
     images: [
-      "/img/fullstack/cyl-1.jpg",
-      "/img/fullstack/cyl-2.jpg",
-      "/img/fullstack/cyl-3.jpg",
-      "/img/fullstack/cyl-4.jpg",
+      "/img/fullstack/cyl-1.png",
+      "/img/fullstack/cyl-2.png",
+      "/img/fullstack/cyl-3.png",
+      "/img/fullstack/cyl-4.png",
+      "/img/fullstack/cyl-5.png",
     ],
   },
   {
@@ -135,14 +136,12 @@ export function FullStackSection() {
                     key={`${src}-${i}`}
                     className="relative w-full overflow-hidden rounded-xl border border-border bg-white shadow-sm"
                   >
-                    <div className="aspect-[16/9] w-full">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={src || "/placeholder.svg"}
-                        alt={`${project.title} preview ${(i % project.images.length) + 1}`}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={src || "/placeholder.svg"}
+                      alt={`${project.title} preview ${(i % project.images.length) + 1}`}
+                      className="w-full h-auto transition duration-500 group-hover:scale-[1.02]"
+                    />
                     <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-black shadow-lg backdrop-blur-sm uppercase">
                       Preview
                     </span>
