@@ -11,49 +11,66 @@ type Card = {
   title: string
   description: string
   type: string
+  images: string[]
   // Kinetic-type words that scroll in the preview area
   words: string[]
 }
 
 const CARDS: Card[] = [
   {
-    count: 3,
+    count: 4,
     category: "PORTFOLIO",
     icon: Palette,
     title: "Projects",
     description:
       "A collection of my recent development work, ranging from full-stack applications to experimental interactive web experiences.",
     type: "PROJECTS",
+    images: [
+      "/img/creative/projects/project (5).png",
+      "/img/creative/projects/project (6).png",
+      "/img/creative/projects/project (1).png",
+      "/img/creative/projects/project (4).png",
+    ],
     words: ["code", "design", "build", "ship"],
   },
   {
-    count: 3,
+    count: 2,
     category: "EXPERIENCE",
     icon: Globe,
     title: "Hackathons",
     description:
       "Intense 48-hour sprints of innovation and collaboration, building functional prototypes to solve real-world challenges.",
     type: "COMPETITIONS",
+    images: ["/img/creative/hackathons/hackathonImage (1).png", "/img/creative/hackathons/hackathonImage (2).png"],
     words: ["sprint", "innovate", "teamwork", "build"],
   },
   {
-    count: 3,
+    count: 2,
     category: "AWARD",
     icon: Award,
     title: "Computer Science QuizBee Champion",
     description:
       "Consistently recognized for technical knowledge and problem-solving speed in regional computer science competitions.",
     type: "AWARD",
+    images: ["/img/creative/competition/competionImage .png", "/img/creative/competition/competionImage .jpg"],
     words: ["champion", "speed", "logic", "victory"],
   },
   {
-    count: 3,
+    count: 6,
     category: "RECOGNITION",
     icon: Award,
     title: "Certificates",
     description:
       "A testament to continuous learning and mastery of various technologies, from cloud platforms to specialized development frameworks.",
     type: "CERTIFICATION",
+    images: [
+      "/img/creative/cert/cert (1).png",
+      "/img/creative/cert/cert (2).png",
+      "/img/creative/cert/cert (3).png",
+      "/img/creative/cert/cert (4).png",
+      "/img/creative/cert/cert (5).png",
+      "/img/creative/cert/cert (6).png",
+    ],
     words: ["learn", "master", "grow", "verify"],
   },
 ]
@@ -123,8 +140,13 @@ export function CreativeDirectionSection() {
                 className="group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md"
               >
                 {/* Kinetic typography preview */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <KineticPreview />
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+                  <img
+                    src={card.images[0]}
+                    alt={card.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
 
                   {/* Count badge (visible on hover) */}
                   <div className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-mono text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
@@ -221,12 +243,12 @@ export function CreativeDirectionSection() {
                 </button>
 
                 <div className="flex flex-col gap-4 w-full">
-                  {Array.from({ length: active.count }).map((_, i) => (
+                  {active.images.map((img, i) => (
                     <div
                       key={i}
-                      className="relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted/20 shadow-sm"
+                      className="relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted shadow-sm"
                     >
-                      <KineticPreview />
+                      <img src={img} alt={`${active.title} - ${i + 1}`} className="h-full w-full object-cover" />
                       <span className="absolute right-6 bottom-6 z-10 inline-flex items-center justify-center rounded-full bg-black/80 px-3 py-1 font-mono text-[10px] font-medium tracking-widest text-white backdrop-blur-md shadow-sm">
                         {i + 1} / {active.count}
                       </span>
