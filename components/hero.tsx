@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Download, Github } from "lucide-react"
+import { Linkedin, Github } from "lucide-react"
 
 const PHRASE = "Hello, world! Call me"
 
@@ -92,13 +92,13 @@ export function Hero() {
           </a>
 
           <a
-            href="https://github.com/charlesplaton"
+            href="https://github.com/Charles-CS"
             target="_blank"
             rel="noreferrer noopener"
             className="inline-flex items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <Github className="h-4 w-4" aria-hidden />
-            github.com/charlesplaton
+            github.com/Charles-CS
           </a>
         </div>
       </div>
