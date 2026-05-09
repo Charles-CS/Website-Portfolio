@@ -30,31 +30,21 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "Orpheus",
-    title: "Orpheus",
-    subtitle: "Music Discovery Platform",
+    id: "RedQuest",
+    title: "RedQuest",
+    subtitle: "Real-Time Blood Rescue Platform",
     description:
-      "Orpheus is a music exploration platform that connects listeners with independent artists. It features playlist curation, artist profiles, and real-time listening rooms.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "WebSockets"],
+      "RedQuest is a mobile platform that connects blood requesters with nearby compatible donors, dispatching a motorcycle rider to transport the donor to the hospital — all within minutes.",
+    tech: ["React Native + Expo Go", "Tailwind", "Railway", "PostgreSQL"],
     images: [
-      "/img/fullstack/orpheus-1.jpg",
-      "/img/fullstack/orpheus-2.jpg",
-      "/img/fullstack/orpheus-3.jpg",
+      "/img/fullstack/cyl-1.png",
+      "/img/fullstack/cyl-2.png",
+      "/img/fullstack/cyl-3.png",
+      "/img/fullstack/cyl-4.png",
+      "/img/fullstack/cyl-5.png",
     ],
   },
-  {
-    id: "TixSigurado",
-    title: "TixSigurado",
-    subtitle: "Event Ticketing System",
-    description:
-      "TixSigurado is a secure ticketing system designed for local events, with QR validation, attendee tracking, and a self-service organizer dashboard.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    images: [
-      "/img/fullstack/tix-1.jpg",
-      "/img/fullstack/tix-2.jpg",
-      "/img/fullstack/tix-3.jpg",
-    ],
-  },
+
 ]
 
 export function FullStackSection() {
