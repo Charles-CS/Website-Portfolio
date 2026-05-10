@@ -84,7 +84,8 @@ export function Hero() {
 
         <div className="mt-10 flex flex-col items-center gap-5">
           <a
-            href="#"
+            href="/img/CV/PlatonCV.pptx.pdf"
+            download="PlatonCV.pdf"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-white shadow-lg shadow-primary/30 transition-transform hover:scale-[1.02]"
           >
             <Download className="h-4 w-4" aria-hidden />
