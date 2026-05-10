@@ -35,12 +35,20 @@ export async function POST(request: NextRequest) {
 
     // Format history for the direct API call (v1 stable)
     // Filter out initial welcome message
-    const contents = messages
+    let contents = messages
       .filter((msg: any) => msg.id !== "welcome")
       .map((msg: { role: string; content: string }) => ({
         role: msg.role === "assistant" ? "model" : "user",
         parts: [{ text: msg.content }],
       }))
+
+    // Prepend system prompt to the first user message for persona
+    if (contents.length > 0) {
+      const firstMsg = contents[0]
+      if (firstMsg.role === "user") {
+        firstMsg.parts[0].text = `[SYSTEM INSTRUCTION: ${SYSTEM_PROMPT}]\n\nUser: ${firstMsg.parts[0].text}`
+      }
+    }
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
@@ -51,9 +59,6 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           contents: contents,
-          systemInstruction: {
-            parts: [{ text: SYSTEM_PROMPT }]
-          }
         }),
       }
     )
