@@ -38,11 +38,14 @@ export async function POST(request: NextRequest) {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     // Format history for the SDK
-    // The first message should include the system prompt context
-    const history = messages.slice(0, -1).map((msg: any) => ({
-      role: msg.role === "assistant" ? "model" : "user",
-      parts: [{ text: msg.content }],
-    }))
+    // Filter out the initial welcome message as the AI requires the first message to be from the user
+    const history = messages
+      .slice(0, -1)
+      .filter((msg: any) => msg.id !== "welcome")
+      .map((msg: any) => ({
+        role: msg.role === "assistant" ? "model" : "user",
+        parts: [{ text: msg.content }],
+      }))
 
     const latestMessage = messages[messages.length - 1].content
 
