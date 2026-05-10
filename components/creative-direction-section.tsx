@@ -13,6 +13,7 @@ type Card = {
   description: string
   type: string
   images: string[]
+  imageDetails: { title: string; description: string }[]
   // Kinetic-type words that scroll in the preview area
   words: string[]
 }
@@ -36,6 +37,16 @@ const CARDS: Card[] = [
       "/img/creative/projects/project-7.png",
       "/img/creative/projects/project-8.png",
     ],
+    imageDetails: [
+      { title: "RedQuest — Blood Rescue Platform", description: "A gamified mobile app by Team Anti-Titis that connects blood requesters with nearby compatible donors, dispatching motorcycle riders to transport donors to hospitals within minutes. Features verified donor profiles, quest tracking, XP rewards, and donation certificates." },
+      { title: "Kumpirma — Signature Verification System", description: "A full-stack AI + Blockchain system integrating Pix2Pix GAN denoising and a Siamese Capsule Network into a forensic-grade pipeline, anchoring every verification outcome immutably on Ethereum." },
+      { title: "BrainstormAI — Academic Engineering Platform", description: "An AI-driven platform for academic engineering that provides topic synthesis, dynamic engineering roadmaps, and tailored architectural guidance. Features project roadmap generation with recommended tech stacks." },
+      { title: "Pixie — Website Builder", description: "A dark-themed website builder platform with the tagline 'Websites that breathe.' Enables users to build top-tier website pages in seconds with an intuitive visual editor and template system." },
+      { title: "The Lost Hospital — Horror Game", description: "A first-person horror exploration game built in Unreal Engine 5. Features atmospheric lighting, immersive sound design, and a haunting abandoned hospital environment." },
+      { title: "SonicPath — A Ride to Read", description: "An educational endless-runner game designed to help children with phonics learning. Combines fun gameplay mechanics with reading exercises to make learning engaging and interactive." },
+      { title: "Tech Treasure — E-Commerce Store", description: "A sleek e-commerce platform for cutting-edge tech products like drones and cameras. Features product categories, a gallery section, and promotional deals with a premium dark UI." },
+      { title: "Toka — Chore Rewards App", description: "A behavioral economics platform that turns daily chores into magical rewards for kids. Bridges household responsibilities and financial literacy, piloted with 100+ families through the Wadhwani Foundation in CALABARZON." },
+    ],
     words: ["code", "design", "build", "ship"],
   },
   {
@@ -47,6 +58,10 @@ const CARDS: Card[] = [
       "Intense 48-hour sprints of innovation and collaboration, building functional prototypes to solve real-world challenges.",
     type: "COMPETITIONS",
     images: ["/img/creative/hackathons/hackathon-1.png", "/img/creative/hackathons/hackathon-2.png"],
+    imageDetails: [
+      { title: "DevKada CodeKada — Anti-Titis", description: "Competed in CodeKada, The Online Hackathon by DevKada. Our team Anti-Titis finalized the core matching logic and status tracking features, delivering high-fidelity mobile screens with real-time push notifications for the project presentation." },
+      { title: "DevKada CodeKada — Build Station", description: "Late-night coding session during the DevKada CodeKada hackathon. 'Build from Anywhere, Build Anything' — working across multiple screens to develop and ship our solution under intense time pressure." },
+    ],
     words: ["sprint", "innovate", "teamwork", "build"],
   },
   {
@@ -58,6 +73,10 @@ const CARDS: Card[] = [
       "Consistently recognized for technical knowledge and problem-solving speed in regional computer science competitions.",
     type: "AWARD",
     images: ["/img/creative/competition/competition-1.png", "/img/creative/competition/competition-2.png"],
+    imageDetails: [
+      { title: "ACSS The Great Flavor Byte — Winners", description: "Receiving certificates of recognition at The Great Flavor Byte event organized by the Association of Computer Science Students (ACSS) at Pamantasan ng Cabuyao. Recognized for excellence in the CS QuizBee competition." },
+      { title: "The Great Flavor Byte — Grand Stage", description: "Full group photo of all winners and participants at The Great Flavor Byte: A Taste of Unity, A Byte of Innovation, held at the University of Cabuyao. Sponsored by CodeChum, LuckyMe, and other partners." },
+    ],
     words: ["champion", "speed", "logic", "victory"],
   },
   {
@@ -75,6 +94,14 @@ const CARDS: Card[] = [
       "/img/creative/cert/cert-4.png",
       "/img/creative/cert/cert-5.png",
       "/img/creative/cert/cert-6.png",
+    ],
+    imageDetails: [
+      { title: "IoT & LoRaWAN Workshop — Fundamentals", description: "Certificate of Participation from the IoT & LoRaWAN Workshop Series by Packetworx and KadaKareer. Covers Internet of Things Basics, how IoT devices communicate, and an overview of IoT communication protocols. Presented April 11, 2026." },
+      { title: "IoT & LoRaWAN Workshop — Foundations", description: "Certificate of Participation covering LoRa/LoRaWAN foundations and deployment frameworks, including practical assessment of real-world IoT applications and localized solution design. Presented April 18, 2026." },
+      { title: "IoT & LoRaWAN Workshop — Practical Applications", description: "Certificate of Participation covering Practical Applications of IoT and LoRaWAN, including a mini-case study on LoRaWAN's utility in the Philippines. Presented April 25, 2026." },
+      { title: "LagunaТech: CS Grand Summit", description: "Certificate of Appreciation from the University of Cabuyao for participating in the LagunaТech: Computer Science Grand Summit organized by the Association of Computer Science Students (ACSS). Recognized for fostering knowledge exchange and collaboration. May 2024." },
+      { title: "Thesis & Capstone Ready Seminar", description: "Certificate of Participation from the University of Cabuyao for actively participating in 'Thesis & Capstone Ready — Preparing 3rd Year Students' of the College of Computing Studies. January 10, 2026." },
+      { title: "ACSS The Great Flavor Byte", description: "Certificate of Participation from the University of Cabuyao for active participation in 'ACSS The Great Flavor Byte: A Taste of Unity, A Byte of Innovation,' celebrating discovery and collective growth. February 23, 2026." },
     ],
     words: ["learn", "master", "grow", "verify"],
   },
@@ -113,7 +140,7 @@ function KineticPreview() {
 
 export function CreativeDirectionSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [page, setPage] = useState(1)
+  const [activeImageIndex, setActiveImageIndex] = useState<number>(0)
 
   const active = openIndex !== null ? CARDS[openIndex] : null
 
@@ -140,7 +167,7 @@ export function CreativeDirectionSection() {
                 type="button"
                 onClick={() => {
                   setOpenIndex(i)
-                  setPage(1)
+                  setActiveImageIndex(0)
                 }}
                 className="group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md"
               >
@@ -212,9 +239,9 @@ export function CreativeDirectionSection() {
                     {active.category}
                   </span>
                   <DialogTitle className="mt-5 text-[26px] font-bold leading-tight text-foreground tracking-tight">
-                    {active.title}
+                    {active.imageDetails[activeImageIndex].title}
                   </DialogTitle>
-                  <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">{active.description}</p>
+                  <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">{active.imageDetails[activeImageIndex].description}</p>
                 </div>
 
                 <div className="mt-12 border-t border-border/50 pt-6">
@@ -254,7 +281,11 @@ export function CreativeDirectionSection() {
                   {active.images.map((img, i) => (
                     <div
                       key={i}
-                      className="relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted shadow-sm"
+                      onClick={() => setActiveImageIndex(i)}
+                      className={cn(
+                        "relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted shadow-sm cursor-pointer transition-all duration-300",
+                        activeImageIndex === i ? "ring-2 ring-primary ring-offset-2 dark:ring-offset-zinc-950 scale-[1.02]" : "hover:scale-[1.01]"
+                      )}
                     >
                       <img
                         src={img}
