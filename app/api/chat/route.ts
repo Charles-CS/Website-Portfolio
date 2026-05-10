@@ -35,7 +35,10 @@ export async function POST(request: NextRequest) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey)
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-1.5-flash",
+      apiVersion: "v1" as any 
+    })
 
     // Format history for the SDK
     // Filter out the initial welcome message as the AI requires the first message to be from the user
