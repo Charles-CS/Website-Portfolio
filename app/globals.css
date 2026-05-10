@@ -180,10 +180,10 @@
   animation: caret-blink 1s steps(1) infinite;
 }
 
-@layer components {
-  /* ─── Chat Widget ─────────────────────────────────────────── */
 
-  /* FAB trigger button */
+/* ─── Chat Widget ─────────────────────────────────────────── */
+
+/* FAB trigger button */
   .chat-widget-fab {
     position: fixed;
     bottom: 28px;
@@ -515,4 +515,3 @@
     color: rgba(0,0,0,0.5);
     font-family: inherit;
   }
-}
