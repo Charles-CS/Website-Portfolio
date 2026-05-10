@@ -39,13 +39,21 @@ const TOOLS_TECHS = [
 
 const GAME_TECHS = [
   { name: "Unity", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" },
-  { name: "Unreal", icon: "https://www.vectorlogo.zone/logos/unrealengine/unrealengine-icon.svg" },
+  { name: "Unreal Engine", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" },
   { name: "Godot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg" },
   { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
   { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
   { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
   { name: "Blender", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" },
   { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+]
+
+const MOBILE_TECHS = [
+  { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Expo Go", icon: "https://www.vectorlogo.zone/logos/expoio/expoio-icon.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Tailwind", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
 ]
 
 const TECH_STACKS = [
@@ -75,13 +83,13 @@ export function AboutSection() {
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: image card */}
-          <div className="relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md">
+          <div className="group relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-md cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
             <img
-              src="/img/profile/AI profile.png"
+              src="/img/profile/Main-Profile.png"
               alt="Charles Platon"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="absolute inset-0 h-full w-full object-cover grayscale-[30%] transition-all duration-700 group-hover:scale-105 group-hover:rotate-1 group-hover:grayscale-0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent transition-opacity duration-700 group-hover:opacity-40" />
 
             <span className="relative inline-flex w-fit items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-black shadow-lg backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden />
@@ -121,7 +129,8 @@ export function AboutSection() {
                   const isFullStack = label === "Full-Stack Web"
                   const isTools = label === "Tools & Deployment"
                   const isGameDev = label === "Game Development"
-                  const hasPopover = isFullStack || isTools || isGameDev
+                  const isMobileDev = label === "Mobile Dev"
+                  const hasPopover = isFullStack || isTools || isGameDev || isMobileDev
 
                   const card = (
                     <div key={label} className={hasPopover ? "w-full cursor-pointer" : "w-full"}>
@@ -181,6 +190,27 @@ export function AboutSection() {
                                     </div>
                                   ))}
                                 </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {isMobileDev && (
+                            <div className="space-y-3 text-center">
+                              <p className="font-mono text-[10px] font-bold tracking-[0.2em] text-black/40 uppercase">
+                                Mobile Application Development
+                              </p>
+                              <div className="flex items-center justify-center gap-4 sm:gap-6">
+                                {MOBILE_TECHS.map((tech) => (
+                                  <div
+                                    key={tech.name}
+                                    className="group relative flex h-10 w-10 items-center justify-center rounded-lg bg-black/[0.03] ring-1 ring-black/10 transition-all hover:bg-black/5 hover:ring-black/20 sm:h-12 sm:w-12"
+                                  >
+                                    <img src={tech.icon} alt={tech.name} className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
+                                    <span className="absolute -top-9 left-1/2 -translate-x-1/2 scale-0 rounded bg-black px-2 py-1 text-[10px] font-bold text-white transition-transform group-hover:scale-100 whitespace-nowrap">
+                                      {tech.name}
+                                    </span>
+                                  </div>
+                                ))}
                               </div>
                             </div>
                           )}

@@ -21,15 +21,15 @@ const COLUMN_B: ShowcaseItem[] = [
 ]
 
 const IMAGES_A = [
-  "/img/imageGallery/gallery-image-1.png",
-  "/img/imageGallery/gallery-image-5.png",
-  "/img/imageGallery/gallery-image-3.png",
+  "/img/image-gallery/gallery-image-1.png",
+  "/img/image-gallery/gallery-image-5.png",
+  "/img/image-gallery/gallery-image-3.png",
 ]
 
 const IMAGES_B = [
-  "/img/imageGallery/gallery-image-2.png",
-  "/img/imageGallery/gallery-image-4.png",
-  "/img/imageGallery/gallery-image-6.png",
+  "/img/image-gallery/gallery-image-2.png",
+  "/img/image-gallery/gallery-image-4.png",
+  "/img/image-gallery/gallery-image-6.png",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {

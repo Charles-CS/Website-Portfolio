@@ -15,21 +15,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: "Kumpirma",
-    title: "Kumpirma",
-    subtitle: "Digital Signature Verification System",
-    description:
-      "Full-stack AI + Blockchain system for signature verification. Integrates YOLOv8, Pix2Pix GAN, and Siamese CapsNet with Ethereum smart contracts and IPFS for tamper-proof document authentication.",
-    tech: ["Next.js", "TypeScript", "Python", "OpenCV & TensorFlow", "PostgreSQL", "IPFS (InterPlanetary File System)"],
-    images: [
-      "/img/fullstack/cyl-1.png",
-      "/img/fullstack/cyl-2.png",
-      "/img/fullstack/cyl-3.png",
-      "/img/fullstack/cyl-4.png",
-      "/img/fullstack/cyl-5.png",
-    ],
-  },
-  {
     id: "RedQuest",
     title: "RedQuest",
     subtitle: "Real-Time Blood Rescue Platform",
@@ -37,14 +22,25 @@ const PROJECTS: Project[] = [
       "RedQuest is a mobile platform that connects blood requesters with nearby compatible donors, dispatching a motorcycle rider to transport the donor to the hospital — all within minutes.",
     tech: ["React Native + Expo Go", "Tailwind", "Railway", "PostgreSQL"],
     images: [
-      "/img/fullstack/cyl-1.png",
-      "/img/fullstack/cyl-2.png",
-      "/img/fullstack/cyl-3.png",
-      "/img/fullstack/cyl-4.png",
-      "/img/fullstack/cyl-5.png",
+      "/img/fullstack/redquestImage-1.png",
+      "/img/fullstack/redquestImage-2.png",
+      "/img/fullstack/redquestImage-3.png",
     ],
   },
-
+  {
+    id: "Kumpirma",
+    title: "Kumpirma",
+    subtitle: "Digital Signature Verification System",
+    description:
+      "Full-stack AI + Blockchain system for signature verification. Integrates YOLOv8, Pix2Pix GAN, and Siamese CapsNet with Ethereum smart contracts and IPFS for tamper-proof document authentication.",
+    tech: ["Next.js", "TypeScript", "Python", "OpenCV & TensorFlow", "PostgreSQL", "IPFS (InterPlanetary File System)"],
+    images: [
+      "/img/fullstack/kumpirmaImage-1.png",
+      "/img/fullstack/kumpirmaImage-2.png",
+      "/img/fullstack/kumpirmaImage-3.png",
+      "/img/fullstack/kumpirmaImage-4.png",
+    ],
+  },
 ]
 
 export function FullStackSection() {
@@ -124,7 +120,10 @@ export function FullStackSection() {
                 {loopImages.map((src, i) => (
                   <div
                     key={`${src}-${i}`}
-                    className="group relative w-full overflow-hidden rounded-xl border border-black/5 bg-white shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] transition-all hover:scale-[1.01] hover:shadow-xl"
+                    className={cn(
+                      "group relative w-full overflow-hidden rounded-xl border border-black/5 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] transition-all hover:scale-[1.01] hover:shadow-xl",
+                      src.includes("redquestImage-3") ? "bg-gradient-to-r from-[#D8E7F8] to-[#E1EDF9]" : "bg-white",
+                    )}
                   >
                     <img
                       src={src || "/placeholder.svg"}
@@ -132,7 +131,7 @@ export function FullStackSection() {
                       className="w-full aspect-[16/8] object-contain transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    
+
                     <span className="absolute left-3 bottom-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[8px] font-normal uppercase tracking-wider text-black/80 shadow-lg backdrop-blur-sm">
                       Preview
                     </span>
@@ -150,3 +149,4 @@ export function FullStackSection() {
     </section>
   )
 }
+

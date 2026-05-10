@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Linkedin, Github } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
@@ -44,15 +44,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="https://github.com/Charles-CS"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:bg-accent hover:text-foreground"
-            aria-label="GitHub"
-          >
-            <Github className="h-4 w-4" />
-          </a>
           <a
             href="https://www.linkedin.com/in/charles-platon-7b51a9403"
             target="_blank"
