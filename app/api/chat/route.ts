@@ -1,4 +1,3 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"
 import { NextRequest, NextResponse } from "next/server"
 
 const SYSTEM_PROMPT = `You are Charles Platon's personal AI assistant on his portfolio website. 
@@ -34,44 +33,43 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey)
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-flash",
-      apiVersion: "v1" as any 
-    })
-
-    // Format history for the SDK
-    // Filter out the initial welcome message as the AI requires the first message to be from the user
-    const history = messages
-      .slice(0, -1)
+    // Format history for the direct API call (v1 stable)
+    // Filter out initial welcome message
+    const contents = messages
       .filter((msg: any) => msg.id !== "welcome")
-      .map((msg: any) => ({
+      .map((msg: { role: string; content: string }) => ({
         role: msg.role === "assistant" ? "model" : "user",
         parts: [{ text: msg.content }],
       }))
 
-    const latestMessage = messages[messages.length - 1].content
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: contents,
+          systemInstruction: {
+            parts: [{ text: SYSTEM_PROMPT }]
+          }
+        }),
+      }
+    )
 
-    // Use a chat session to maintain context
-    const chat = model.startChat({
-      history: history,
-      generationConfig: {
-        maxOutputTokens: 500,
-      },
-    })
+    if (!response.ok) {
+      const errorData = await response.json()
+      console.error("Direct API error:", errorData)
+      throw new Error(errorData.error?.message || "Failed to fetch from Gemini API")
+    }
 
-    // Send the message with the system prompt context if it's the first message
-    const prompt = messages.length === 1 
-      ? `[SYSTEM INSTRUCTION: ${SYSTEM_PROMPT}]\n\nUser Question: ${latestMessage}`
-      : latestMessage
-
-    const result = await chat.sendMessage(prompt)
-    const response = await result.response
-    const text = response.text()
+    const data = await response.json()
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response from AI."
 
     return NextResponse.json({ content: text })
   } catch (error: any) {
-    console.error("Chat API SDK error:", error)
+    console.error("Chat API error details:", error)
     return NextResponse.json(
       { error: error.message || "Failed to get response from AI" },
       { status: 500 }
