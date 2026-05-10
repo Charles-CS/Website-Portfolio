@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { ChatWidget } from "@/components/chat-widget"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-background`}>
       <body suppressHydrationWarning className="font-sans antialiased">
         {children}
+        <ChatWidget />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
