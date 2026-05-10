@@ -12,24 +12,28 @@ const COLUMN_A: ShowcaseItem[] = [
   { title: "Creative Work", tag: "Design & Logic", position: "top" },
   { title: "Digital Craft", tag: "Pixel Perfect", position: "bottom" },
   { title: "Visual Story", tag: "Interface Design", position: "top" },
+  { title: "Modern UI", tag: "Responsive Design", position: "bottom" },
 ]
 
 const COLUMN_B: ShowcaseItem[] = [
   { title: "Studio Projects", tag: "Built with Passion", position: "top" },
   { title: "Tech Innovation", tag: "Modern Stack", position: "bottom" },
   { title: "Future Vision", tag: "Next Gen Web", position: "top" },
+  { title: "App Mastery", tag: "Clean Architecture", position: "bottom" },
 ]
 
 const IMAGES_A = [
   "/img/image-gallery/gallery-image-1.png",
   "/img/image-gallery/gallery-image-5.png",
   "/img/image-gallery/gallery-image-3.png",
+  "/img/image-gallery/gallery-image-7.png",
 ]
 
 const IMAGES_B = [
   "/img/image-gallery/gallery-image-2.png",
   "/img/image-gallery/gallery-image-4.png",
   "/img/image-gallery/gallery-image-6.png",
+  "/img/image-gallery/gallery-image-8.png",
 ]
 
 function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
@@ -38,7 +42,7 @@ function ProjectCard({ item, src }: { item: ShowcaseItem; src: string }) {
       <img
         src={src || "/placeholder.svg"}
         alt={item.title}
-        className="w-full aspect-[3/2] object-contain transition-transform duration-700"
+        className="w-full aspect-[3/2] object-cover transition-transform duration-700"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 

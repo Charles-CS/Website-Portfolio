@@ -15,19 +15,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: "RedQuest",
-    title: "RedQuest",
-    subtitle: "Real-Time Blood Rescue Platform",
-    description:
-      "RedQuest is a mobile platform that connects blood requesters with nearby compatible donors, dispatching a motorcycle rider to transport the donor to the hospital — all within minutes.",
-    tech: ["React Native + Expo Go", "Tailwind", "Railway", "PostgreSQL"],
-    images: [
-      "/img/fullstack/redquestImage-1.png",
-      "/img/fullstack/redquestImage-2.png",
-      "/img/fullstack/redquestImage-3.png",
-    ],
-  },
-  {
     id: "Kumpirma",
     title: "Kumpirma",
     subtitle: "Digital Signature Verification System",
@@ -39,6 +26,19 @@ const PROJECTS: Project[] = [
       "/img/fullstack/kumpirmaImage-2.png",
       "/img/fullstack/kumpirmaImage-3.png",
       "/img/fullstack/kumpirmaImage-4.png",
+    ],
+  },
+  {
+    id: "RedQuest",
+    title: "RedQuest",
+    subtitle: "Real-Time Blood Rescue Platform",
+    description:
+      "RedQuest is a mobile platform that connects blood requesters with nearby compatible donors, dispatching a motorcycle rider to transport the donor to the hospital — all within minutes.",
+    tech: ["React Native + Expo Go", "Tailwind", "Railway", "PostgreSQL"],
+    images: [
+      "/img/fullstack/redquestImage-1.png",
+      "/img/fullstack/redquestImage-2.png",
+      "/img/fullstack/redquestImage-3.png",
     ],
   },
 ]

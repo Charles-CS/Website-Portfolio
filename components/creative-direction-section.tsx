@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Palette, Globe, Award, X, type LucideIcon } from "lucide-react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { cn } from "@/lib/utils"
 
 type Card = {
   count: number
@@ -18,7 +19,7 @@ type Card = {
 
 const CARDS: Card[] = [
   {
-    count: 4,
+    count: 8,
     category: "PORTFOLIO",
     icon: Palette,
     title: "Projects",
@@ -26,10 +27,14 @@ const CARDS: Card[] = [
       "A collection of my recent development work, ranging from full-stack applications to experimental interactive web experiences.",
     type: "PROJECTS",
     images: [
+      "/img/creative/projects/project-1.png",
+      "/img/creative/projects/project-2.png",
+      "/img/creative/projects/project-3.png",
+      "/img/creative/projects/project-4.png",
       "/img/creative/projects/project-5.png",
       "/img/creative/projects/project-6.png",
-      "/img/creative/projects/project-1.png",
-      "/img/creative/projects/project-4.png",
+      "/img/creative/projects/project-7.png",
+      "/img/creative/projects/project-8.png",
     ],
     words: ["code", "design", "build", "ship"],
   },
@@ -144,7 +149,10 @@ export function CreativeDirectionSection() {
                   <img
                     src={card.images[0]}
                     alt={card.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={cn(
+                      "h-full w-full transition-transform duration-500 group-hover:scale-110",
+                      card.title === "Hackathons" ? "object-fill" : "object-cover"
+                    )}
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
 
@@ -248,7 +256,14 @@ export function CreativeDirectionSection() {
                       key={i}
                       className="relative flex aspect-[16/11] w-full items-center justify-center overflow-hidden rounded-[32px] border border-black/5 dark:border-white/5 bg-muted shadow-sm"
                     >
-                      <img src={img} alt={`${active.title} - ${i + 1}`} className="h-full w-full object-cover" />
+                      <img
+                        src={img}
+                        alt={`${active.title} - ${i + 1}`}
+                        className={cn(
+                          "h-full w-full",
+                          active.title === "Hackathons" ? "object-fill" : "object-cover"
+                        )}
+                      />
                       <span className="absolute right-6 bottom-6 z-10 inline-flex items-center justify-center rounded-full bg-black/80 px-3 py-1 font-mono text-[10px] font-medium tracking-widest text-white backdrop-blur-md shadow-sm">
                         {i + 1} / {active.count}
                       </span>

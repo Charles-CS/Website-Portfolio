@@ -281,7 +281,7 @@ export function AboutSection() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
                   <Sparkles className="h-3 w-3 text-primary" aria-hidden />
                 </span>
-                Charles · Midnight Coder
+                Charles · Light Theme Coder
               </div>
             </div>
           </div>
