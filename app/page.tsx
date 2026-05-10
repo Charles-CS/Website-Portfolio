@@ -4,7 +4,7 @@ import { ScrollingShowcase } from "@/components/scrolling-showcase"
 import { AboutSection } from "@/components/about-section"
 import { FullStackSection } from "@/components/fullstack-section"
 import { CreativeDirectionSection } from "@/components/creative-direction-section"
-import { SiteFooter } from "@/components/site-footer"
+import { ContactSection } from "@/components/contact-section"
 
 export default function HomePage() {
   return (
@@ -15,7 +15,7 @@ export default function HomePage() {
       <AboutSection />
       <FullStackSection />
       <CreativeDirectionSection />
-      <SiteFooter />
+      <ContactSection />
     </main>
   )
 }
