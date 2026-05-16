@@ -41,6 +41,19 @@ const PROJECTS: Project[] = [
       "/img/fullstack/redquestImage-3.png",
     ],
   },
+  {
+    id: "Lunas",
+    title: "Lunas",
+    subtitle: "medical information platform",
+    description:
+      "Lunas is a secure, web-based emergency medical information platform that gives licensed medical professionals instant access to a patient's critical health data via a QR code — even when the patient is unconscious or unable to speak.",
+    tech: ["Next.Js", "React", "PostgreSQL", "Password Hashing", "RBAC", "TailwindCSS"],
+    images: [
+      "/img/fullstack/LunasImage1.png",
+      "/img/fullstack/LunasImage2.png",
+      "/img/fullstack/LunasImage3.png",
+    ],
+  },
 ]
 
 export function FullStackSection() {
