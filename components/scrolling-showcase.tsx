@@ -13,6 +13,7 @@ const COLUMN_A: ShowcaseItem[] = [
   { title: "Digital Craft", tag: "Pixel Perfect", position: "bottom" },
   { title: "Visual Story", tag: "Interface Design", position: "top" },
   { title: "Modern UI", tag: "Responsive Design", position: "bottom" },
+  { title: "Creative Code", tag: "Interactive Art", position: "top" },
 ]
 
 const COLUMN_B: ShowcaseItem[] = [
@@ -27,6 +28,7 @@ const IMAGES_A = [
   "/img/image-gallery/gallery-image-5.png",
   "/img/image-gallery/gallery-image-3.png",
   "/img/image-gallery/gallery-image-7.png",
+  "/img/image-gallery/gallery-image-9.png",
 ]
 
 const IMAGES_B = [

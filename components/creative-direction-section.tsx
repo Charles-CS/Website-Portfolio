@@ -20,7 +20,7 @@ type Card = {
 
 const CARDS: Card[] = [
   {
-    count: 8,
+    count: 9,
     category: "PORTFOLIO",
     icon: Palette,
     title: "Projects",
@@ -36,6 +36,7 @@ const CARDS: Card[] = [
       "/img/creative/projects/project-6.png",
       "/img/creative/projects/project-7.png",
       "/img/creative/projects/project-8.png",
+      "/img/creative/projects/project-9.png",
     ],
     imageDetails: [
       { title: "RedQuest — Blood Rescue Platform", description: "A gamified mobile app by Team Anti-Titis that connects blood requesters with nearby compatible donors, dispatching motorcycle riders to transport donors to hospitals within minutes. Features verified donor profiles, quest tracking, XP rewards, and donation certificates." },
@@ -46,21 +47,23 @@ const CARDS: Card[] = [
       { title: "SonicPath — A Ride to Read", description: "An educational endless-runner game designed to help children with phonics learning. Combines fun gameplay mechanics with reading exercises to make learning engaging and interactive." },
       { title: "Tech Treasure — E-Commerce Store", description: "A sleek e-commerce platform for cutting-edge tech products like drones and cameras. Features product categories, a gallery section, and promotional deals with a premium dark UI." },
       { title: "Toka — Chore Rewards App", description: "A behavioral economics platform that turns daily chores into magical rewards for kids. Bridges household responsibilities and financial literacy, piloted with 100+ families through the Wadhwani Foundation in CALABARZON." },
+      { title: "Recent Project Showcase", description: "A showcase of my recent design and development work, featuring modern user interfaces and seamless user experiences." },
     ],
     words: ["code", "design", "build", "ship"],
   },
   {
-    count: 2,
+    count: 3,
     category: "EXPERIENCE",
     icon: Globe,
     title: "Hackathons",
     description:
       "Intense 48-hour sprints of innovation and collaboration, building functional prototypes to solve real-world challenges.",
     type: "COMPETITIONS",
-    images: ["/img/creative/hackathons/hackathon-1.png", "/img/creative/hackathons/hackathon-2.png"],
+    images: ["/img/creative/hackathons/hackathon-1.png", "/img/creative/hackathons/hackathon-2.png", "/img/creative/hackathons/hackaton-3.png"],
     imageDetails: [
       { title: "DevKada CodeKada — Anti-Titis", description: "Competed in CodeKada, The Online Hackathon by DevKada. Our team Anti-Titis finalized the core matching logic and status tracking features, delivering high-fidelity mobile screens with real-time push notifications for the project presentation." },
       { title: "DevKada CodeKada — Build Station", description: "Late-night coding session during the DevKada CodeKada hackathon. 'Build from Anywhere, Build Anything' — working across multiple screens to develop and ship our solution under intense time pressure." },
+      { title: "Hackathon Event", description: "Participating in an intense coding hackathon event, collaborating with team members to build an innovative solution." },
     ],
     words: ["sprint", "innovate", "teamwork", "build"],
   },
