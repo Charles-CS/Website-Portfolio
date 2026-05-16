@@ -37,7 +37,7 @@ export function ContactSection() {
 
       <div className="flex items-center gap-4 mb-16">
         <a
-          href="https://www.linkedin.com/in/charles-platon-7b51a9403"
+          href="https://www.linkedin.com/in/charles-platon"
           target="_blank"
           rel="noreferrer noopener"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white dark:bg-zinc-900 border border-border shadow-sm text-primary hover:scale-105 transition-transform"

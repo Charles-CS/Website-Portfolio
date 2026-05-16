@@ -66,8 +66,9 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            onClick={(e) => handleScroll(e, "#contact")}
+            href="https://www.linkedin.com/in/charles-platon"
+            target="_blank"
+            rel="noreferrer noopener"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-white shadow-lg shadow-primary/25 transition-transform hover:scale-[1.02]"
           >
             <Linkedin className="h-4 w-4" aria-hidden />
