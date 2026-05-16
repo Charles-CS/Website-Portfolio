@@ -135,7 +135,11 @@ export function FullStackSection() {
                     key={`${src}-${i}`}
                     className={cn(
                       "group relative w-full overflow-hidden rounded-xl border border-black/5 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] transition-all hover:scale-[1.01] hover:shadow-xl",
-                      src.includes("redquestImage-3") ? "bg-gradient-to-r from-[#D8E7F8] to-[#E1EDF9]" : "bg-white",
+                      src.includes("redquestImage-3") 
+                        ? "bg-gradient-to-r from-[#D8E7F8] to-[#E1EDF9]" 
+                        : src.includes("LunasImage")
+                        ? "bg-[#F8F2EA]"
+                        : "bg-white",
                     )}
                   >
                     <img
