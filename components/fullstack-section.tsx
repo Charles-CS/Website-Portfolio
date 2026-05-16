@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
   {
     id: "Lunas",
     title: "Lunas",
-    subtitle: "medical information platform",
+    subtitle: "Medical information platform",
     description:
       "Lunas is a secure, web-based emergency medical information platform that gives licensed medical professionals instant access to a patient's critical health data via a QR code — even when the patient is unconscious or unable to speak.",
     tech: ["Next.Js", "React", "PostgreSQL", "Password Hashing", "RBAC", "TailwindCSS"],
@@ -147,7 +147,14 @@ export function FullStackSection() {
                     <img
                       src={src || "/placeholder.svg"}
                       alt={`${project.title} preview ${(i % project.images.length) + 1}`}
-                      className="w-full aspect-[16/8] object-contain transition-transform duration-700"
+                      className={cn(
+                        "w-full aspect-[16/8] transition-transform duration-700",
+                        src.includes("kumpirmaImage-4")
+                          ? "object-cover object-[50%_-12px]"
+                          : src.includes("kumpirma")
+                            ? "object-cover object-[50%_-8px]"
+                            : "object-contain"
+                      )}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
