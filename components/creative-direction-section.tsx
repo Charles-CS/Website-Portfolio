@@ -83,7 +83,7 @@ const CARDS: Card[] = [
     words: ["champion", "speed", "logic", "victory"],
   },
   {
-    count: 6,
+    count: 7,
     category: "RECOGNITION",
     icon: Award,
     title: "Certificates",
@@ -97,6 +97,7 @@ const CARDS: Card[] = [
       "/img/creative/cert/cert-4.png",
       "/img/creative/cert/cert-5.png",
       "/img/creative/cert/cert-6.png",
+      "/img/creative/cert/cert-7.png",
     ],
     imageDetails: [
       { title: "IoT & LoRaWAN Workshop — Fundamentals", description: "Certificate of Participation from the IoT & LoRaWAN Workshop Series by Packetworx and KadaKareer. Covers Internet of Things Basics, how IoT devices communicate, and an overview of IoT communication protocols. Presented April 11, 2026." },
@@ -105,6 +106,7 @@ const CARDS: Card[] = [
       { title: "LagunaТech: CS Grand Summit", description: "Certificate of Appreciation from the University of Cabuyao for participating in the LagunaТech: Computer Science Grand Summit organized by the Association of Computer Science Students (ACSS). Recognized for fostering knowledge exchange and collaboration. May 2024." },
       { title: "Thesis & Capstone Ready Seminar", description: "Certificate of Participation from the University of Cabuyao for actively participating in 'Thesis & Capstone Ready — Preparing 3rd Year Students' of the College of Computing Studies. January 10, 2026." },
       { title: "ACSS The Great Flavor Byte", description: "Certificate of Participation from the University of Cabuyao for active participation in 'ACSS The Great Flavor Byte: A Taste of Unity, A Byte of Innovation,' celebrating discovery and collective growth. February 23, 2026." },
+      { title: "New Certification", description: "Recognition for continuing professional development, highlighting new technical skills and active participation in advanced learning initiatives." },
     ],
     words: ["learn", "master", "grow", "verify"],
   },
